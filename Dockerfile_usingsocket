@@ -1,0 +1,9 @@
+FROM gradle:jdk17
+
+# Docker 클라이언트 설치
+RUN apt-get update && \
+    apt-get install -y docker.io
+
+RUN groupadd -g 1001 newdocker && usermod -aG newdocker root
+
+USER root
